@@ -6,7 +6,7 @@ metadata: # kpt-merge: nginx/nginx-dep
   labels:
     app: nginx
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|nginx|nginx-dep'
+    internal.kpt.dev/upstream-identifier: apps|Deployment|nginx|nginx-dep
 spec:
   replicas: 2
   selector:
@@ -21,7 +21,7 @@ spec:
       - name: nginx
         image: nginx:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         volumeMounts:
         - name: nginx-index
           mountPath: /usr/share/nginx/html/
