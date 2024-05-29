@@ -4,7 +4,7 @@ metadata: # kpt-merge: nginx/nginx-srv
   name: nginx-srv
   namespace: nginx
   annotations:
-    internal.kpt.dev/upstream-identifier: '|Service|nginx|nginx-srv'
+    internal.kpt.dev/upstream-identifier: "|Service|nginx|nginx-srv"
 spec:
   type: LoadBalancer
   selector:
@@ -12,4 +12,5 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
+  externalTrafficPolicy: Cluster
